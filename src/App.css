@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 33vh;
+  margin-bottom: auto;
 }
 
 .drum-pads {

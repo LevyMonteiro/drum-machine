@@ -70,3 +70,11 @@ footer a:hover {
   transform: scale(1);
   margin-left: 2px;
 }
+
+.pressed {
+  background-color: wheat;
+  border: wheat;
+  height: 84px;
+  margin-top: 4px;
+  box-shadow: wheat 0px 3px;
+}

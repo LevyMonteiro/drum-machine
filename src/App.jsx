@@ -66,6 +66,14 @@ function App() {
 
     // show the audio description on diplay
     setKeyPressed(audio.textContent)
+
+    // add animation when the drum-pad is pressed 
+    const drumPadElement = audio.parentNode
+
+    drumPadElement.classList.add('pressed');
+    setTimeout(function() {
+      drumPadElement.classList.remove('pressed');
+    }, 100);
   }
 
   return (

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -13,15 +15,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 33vh;
-  margin-bottom: auto;
+  margin: 24vh auto auto auto;
+  background-color: #646464;
+  width: min-content;
+  padding: 32px 46px;
+  border: 4px solid black ;
 }
 
 .drum-pads {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
-  margin: auto;
 }
 
 .drum-pad {
@@ -33,4 +37,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: black 3px 3px 5px;
+}
+
+#display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  background-color: black;
+  width: 280px;
+  height: 46px;
+  padding: 8px 16px;
+}
+
+footer {
+  font-family: 'Raleway', sans-serifz;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+footer a {
+  text-decoration: none;
+  color: wheat;
+  font-weight: 600;
+  transform: scale(0.9);
+}
+
+footer a:hover {
+  transform: scale(1);
+  margin-left: 2px;
 }

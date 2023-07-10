@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
 
+  // track the pressed key
   const [keyPressed, setKeyPressed] = useState('')
 
   useEffect(() => {
@@ -62,32 +63,37 @@ function App() {
   const playSound = (selector) => {
     const audio = document.getElementById(selector)
     audio.play()
+
+    // show the audio description on diplay
     setKeyPressed(audio.textContent)
   }
 
   return (
-    <div id='drum-machine'>
-      <div id='display'>
-        {keyPressed}
-      </div>
-      <div className='drum-pads'>
-        {drumPads.map((drumPad) => (
-          <div 
+    <>
+      <div id='drum-machine'>
+        <div id='display'>
+          {keyPressed}
+        </div>
+        <div className='drum-pads'>
+          {drumPads.map((drumPad) => (
+            <div 
             className='drum-pad' 
-            id={drumPad['audio-id']}
-            key={drumPad.src} 
-            onClick={() => playSound(drumPad.text)}
-          >
-            {drumPad.text}
-            <audio
-              id={drumPad.text} 
-              className='clip'
-              src={drumPad.src}
-            >{drumPad['audio-id']}</audio>
-          </div>
-        ))}
+              id={drumPad['audio-id']}
+              key={drumPad.src} 
+              onClick={() => playSound(drumPad.text)}
+            >
+              {drumPad.text}
+              <audio
+                id={drumPad.text} 
+                className='clip'
+                src={drumPad.src}
+                >{drumPad['audio-id']}</audio>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      <footer>by <a href="https://github.com/levymonteiro" target='_blank'>Levy Monteiro</a></footer>
+    </>
   )
 }
 

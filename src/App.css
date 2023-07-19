@@ -78,3 +78,31 @@ footer a:hover {
   margin-top: 4px;
   box-shadow: wheat 0px 3px;
 }
+
+.button-wrapper {
+  padding: 5px;
+}
+
+.button {
+  width: 48px;
+  height: 28px;
+  background-color: black;
+  padding: 4px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.button div {
+  width: 20px;
+  height: 20px;
+  background-color: wheat;
+}

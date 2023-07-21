@@ -102,7 +102,10 @@ function App() {
   const [displayAss, setDisplayAss] = useState('')
   const [soundGroup, setSoundGroup] = useState(firstSoundsGroup)
   const [btnSoundsGroup, setBtnSoundsGroup] = useState('right')
+  const [soundGroupName, setSoundGroupName] = useState('Heater Kit')
   const [volume, setVolume] = useState(1)
+  const [power, setPower] = useState(true)
+  const [btnPower, setBtnPower] = useState('right')
   
   // track the pressed key
   useEffect(() => {
@@ -117,7 +120,7 @@ function App() {
     audio.play()
 
     // show the audio description on diplay
-    setDisplayAss(audio.textContent)
+    setDisplayAss(power ? audio.textContent : "");
 
     // add animation when the drum-pad is pressed 
     const drumPadElement = audio.parentNode
@@ -133,10 +136,10 @@ function App() {
       // change the .drum-pad element with state
       setSoundGroup(secondSoundsGroup)
       // update the sounds kit name on display
-      setDisplayAss('Smooth Piano Kit')
+      setSoundGroupName('Smooth Piano Kit')
     } else {
       setSoundGroup(firstSoundsGroup)
-      setDisplayAss('Heater Kit')
+      setSoundGroupName('Heater Kit')
     }
 
     // change the position of the .button
@@ -159,6 +162,17 @@ function App() {
       }
     });
   }
+
+  const turnPower = () => {
+    setPower(!power)
+    setDisplayAss('')
+     // change the position of the .button
+     if(power) {
+       setBtnPower('left')
+    } else {
+        setBtnPower('right')
+      }
+  }
   
   setAudioVolume()
   
@@ -167,8 +181,14 @@ function App() {
       <div id='drum-machine'>
         <div className="controller">
           <div id='display'>{displayAss}</div>
+          <div>
+            <h2>Power {power ? "OFF" : "ON"}</h2>
+            <div className={`button ${btnPower}`} onClick={turnPower}>
+              <div></div>
+            </div>
+          </div>
           <div className='button-wrapper'>
-            <h2>Change Sounds Group</h2>
+            <h2>{soundGroupName}</h2>
             <div className={`button ${btnSoundsGroup}`} onClick={changeSoundGroup}>
               <div></div>
             </div>
@@ -187,21 +207,41 @@ function App() {
         </div>
         
         <div className='drum-pads'>
-          {soundGroup.map((drumPad) => (
-            <div 
-            className='drum-pad' 
-            id={drumPad['audio-id']}
-            key={drumPad.src} 
-            onClick={() => playSound(drumPad.text)}
-            >
-              {drumPad.text}
-              <audio
-                id={drumPad.text} 
-                className='clip'
-                src={drumPad.src}
-                >{drumPad['audio-id']}</audio>
-            </div>
-          ))}
+          {power 
+            ? soundGroup.map((drumPad) => (
+              <div 
+                className='drum-pad' 
+                id={drumPad['audio-id']}
+                key={drumPad.src} 
+                onClick={() => playSound(drumPad.text)}
+              >
+                {drumPad.text}
+                <audio
+                  id={drumPad.text} 
+                  className='clip'
+                  src={drumPad.src}
+                >
+                  {drumPad['audio-id']}
+                </audio>
+              </div>
+            ))
+            : soundGroup.map((drumPad) => (
+              <div 
+                className='drum-pad' 
+                id={drumPad['audio-id']}
+                key={drumPad.src} 
+                onClick={() => playSound(drumPad.text)}
+              >
+                {drumPad.text}
+                <audio
+                  id={drumPad.text} 
+                  className='clip'
+                  src={'#'}
+                >
+                  {drumPad['audio-id']}
+                </audio>
+              </div>
+            ))}
         </div>
       </div>
       <footer>by <a href="https://github.com/levymonteiro" target='_blank'>Levy Monteiro</a></footer>

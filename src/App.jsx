@@ -180,19 +180,13 @@ function App() {
     <>
       <div id='drum-machine'>
         <div className="controller">
-          <div id='display'>{displayAss}</div>
-          <div>
+          <div className='button-wrapper'>
             <h2>Power {power ? "OFF" : "ON"}</h2>
             <div className={`button ${btnPower}`} onClick={turnPower}>
               <div></div>
             </div>
           </div>
-          <div className='button-wrapper'>
-            <h2>{soundGroupName}</h2>
-            <div className={`button ${btnSoundsGroup}`} onClick={changeSoundGroup}>
-              <div></div>
-            </div>
-          </div>
+          
           <div className="button-wrapper">
             <h2>Volume: {Math.round(volume * 100)}%</h2>
             <input 
@@ -203,6 +197,13 @@ function App() {
               value={volume}
               onChange={handleVolumeChange}
             />
+          </div>
+          <div id='display'>{displayAss}</div>
+          <div className='button-wrapper'>
+            <h2>{soundGroupName}</h2>
+            <div className={`button ${btnSoundsGroup}`} onClick={changeSoundGroup}>
+              <div></div>
+            </div>
           </div>
         </div>
         

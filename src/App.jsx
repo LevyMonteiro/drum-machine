@@ -102,6 +102,7 @@ function App() {
   const [displayAss, setDisplayAss] = useState('')
   const [soundGroup, setSoundGroup] = useState(firstSoundsGroup)
   const [btnSoundsGroup, setBtnSoundsGroup] = useState('right')
+  const [volume, setVolume] = useState(1)
   
   // track the pressed key
   useEffect(() => {
@@ -112,6 +113,7 @@ function App() {
 
   const playSound = (selector) => {
     const audio = document.getElementById(selector)
+    audio.currentTime = 0
     audio.play()
 
     // show the audio description on diplay
@@ -145,18 +147,42 @@ function App() {
     }
   }
 
+  const handleVolumeChange = e => {
+    setVolume(e.target.value)
+  }
+  
+  const setAudioVolume = () => {
+    const audios = soundGroup.map(sound => document.getElementById(sound.text))
+    audios.forEach(audio => {
+      if(audio) {
+        audio.volume = volume
+      }
+    });
+  }
+  
+  setAudioVolume()
+  
   return (
     <>
       <div id='drum-machine'>
         <div className="controller">
-          <div id='display'>
-            {displayAss}
-          </div>
+          <div id='display'>{displayAss}</div>
           <div className='button-wrapper'>
-            Change Sounds Group
+            <h2>Change Sounds Group</h2>
             <div className={`button ${btnSoundsGroup}`} onClick={changeSoundGroup}>
               <div></div>
             </div>
+          </div>
+          <div className="button-wrapper">
+            <h2>Volume: {Math.round(volume * 100)}%</h2>
+            <input 
+              type="range"
+              min={0}
+              max={1}
+              step={0.01}
+              value={volume}
+              onChange={handleVolumeChange}
+            />
           </div>
         </div>
         

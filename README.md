@@ -5,7 +5,8 @@ This is an app that simulates a drum pad machine, you can click on the pads or i
 Check out a short video demonstrating the app in action:
 
 
-https://github.com/LevyMonteiro/drum-machine/assets/102385102/6f612353-672c-459a-8929-261949ca4428
+https://github.com/LevyMonteiro/drum-machine/assets/102385102/b3170ec7-c03c-4e6a-b12f-c06c70938f96
+
 
 
 ## Getting Started

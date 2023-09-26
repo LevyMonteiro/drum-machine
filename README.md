@@ -15,7 +15,7 @@ To view the website, simply visit the live URL <a href="https://drum-machine-lev
 If you'd like to run the website locally on your machine, you can do so by following these steps:
 <ol>
 <li>Clone the repository to your local machine using <code>git clone https://github.com/LevyMonteiro/drum-machine.git</code>.</li>
-<li>Change to directory using <code>cd random-machine-quote</code>.</li>
+<li>Change to directory using <code>cd drum-machine</code>.</li>
 <li>Install the dependecies using <code>npm instal</code></li>
 <li>Run using <code>npm run dev</code>.</li>
 </ol>

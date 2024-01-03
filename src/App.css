@@ -6,11 +6,12 @@
   box-sizing: border-box;
 }
 
-body { 
+body {
   background-color: #242424;
   color: wheat;
   text-shadow: black 3px 3px 5px;
 }
+
 #drum-machine {
   display: flex;
   flex-direction: row-reverse;
@@ -21,7 +22,7 @@ body {
   background-color: #646464;
   width: min-content;
   padding: 32px;
-  border: 4px solid black ;
+  border: 4px solid black;
 }
 
 .drum-pads {

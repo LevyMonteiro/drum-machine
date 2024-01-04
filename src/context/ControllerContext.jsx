@@ -99,6 +99,7 @@ export default function ControllerProvider({ children }) {
     },
   ];
 
+  const [displayAss, setDisplayAss] = useState('');
   const [soundGroup, setSoundGroup] = useState(firstSoundsGroup);
   const [btnSoundsGroup, setBtnSoundsGroup] = useState('right');
   const [soundGroupName, setSoundGroupName] = useState('Heater Kit');
@@ -109,6 +110,8 @@ export default function ControllerProvider({ children }) {
   return (
     <ControllerContext.Provider
       value={{
+        displayAss,
+        setDisplayAss,
         soundGroup,
         setSoundGroup,
         btnSoundsGroup,

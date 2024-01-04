@@ -36,6 +36,19 @@ export default function Controller() {
     setVolume(e.target.value);
   };
 
+  const setAudioVolume = () => {
+    const audios = soundGroup.map((sound) =>
+      document.getElementById(sound.text),
+    );
+    audios.forEach((audio) => {
+      if (audio) {
+        audio.volume = volume;
+      }
+    });
+  };
+
+  setAudioVolume();
+
   const changeSoundGroup = () => {
     if (JSON.stringify(soundGroup) === JSON.stringify(firstSoundsGroup)) {
       // change the .drum-pad element with state

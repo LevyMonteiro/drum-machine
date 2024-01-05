@@ -1,4 +1,4 @@
-import '../App.css';
+import '../index.css';
 import Controller from './Controller';
 import Keyboard from './Keyboard';
 

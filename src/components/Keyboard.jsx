@@ -14,9 +14,8 @@ export default function Keyboard() {
 
     // add animation when the drum-pad is pressed
     const drumPadElement = audio.parentNode;
-
     drumPadElement.classList.add('pressed');
-    setTimeout(function () {
+    setTimeout(() => {
       drumPadElement.classList.remove('pressed');
     }, 100);
   };

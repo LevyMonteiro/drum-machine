@@ -51,9 +51,7 @@ export default function Controller() {
 
   const changeSoundGroup = () => {
     if (JSON.stringify(soundGroup) === JSON.stringify(firstSoundsGroup)) {
-      // change the .drum-pad element with state
       setSoundGroup(secondSoundsGroup);
-      // update the sounds kit name on display
       setSoundGroupName('Smooth Piano Kit');
     } else {
       setSoundGroup(firstSoundsGroup);
@@ -71,7 +69,7 @@ export default function Controller() {
   return (
     <div className='controller'>
       <div className='button-wrapper'>
-        <h2>Power {power ? 'OFF' : 'ON'}</h2>
+        <h2>Power: {power ? 'ON' : 'OFF'}</h2>
         <div className={`button ${btnPower}`} onClick={turnPower}>
           <div></div>
         </div>
@@ -88,6 +86,7 @@ export default function Controller() {
           onChange={handleVolumeChange}
         />
       </div>
+
       <div id='display'>{displayAss}</div>
       <div className='button-wrapper'>
         <h2>{soundGroupName}</h2>

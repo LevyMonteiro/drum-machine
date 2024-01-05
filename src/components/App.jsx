@@ -1,19 +1,17 @@
 import '../index.css';
 import Controller from './Controller';
 import Keyboard from './Keyboard';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div id='drum-machine'>
-      <Controller />
-      <Keyboard />
-      <footer>
-        by{' '}
-        <a href='https://github.com/levymonteiro' target='_blank'>
-          Levy Monteiro
-        </a>
-      </footer>
-    </div>
+    <>
+      <div id='drum-machine'>
+        <Controller />
+        <Keyboard />
+      </div>
+      <Footer />
+    </>
   );
 }
 

@@ -67,17 +67,21 @@ export default function Controller() {
   };
 
   return (
-    <div className='controller'>
-      <div className='button-wrapper'>
+    <div className='controller flex flex-col justify-center items-center w-72 gap-4'>
+      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
         <h2>Power: {power ? 'ON' : 'OFF'}</h2>
-        <div className={`button ${btnPower}`} onClick={turnPower}>
-          <div></div>
+        <div
+          className={`button ${btnPower} w-12 bg-black p-1 flex items-center`}
+          onClick={turnPower}
+        >
+          <div className='bg-blue-600 w-5 h-5'></div>
         </div>
       </div>
 
-      <div className='button-wrapper'>
+      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
         <h2>Volume: {Math.round(volume * 100)}%</h2>
         <input
+          className='w-full'
           type='range'
           min={0}
           max={1}
@@ -87,11 +91,17 @@ export default function Controller() {
         />
       </div>
 
-      <div id='display'>{displayAss}</div>
-      <div className='button-wrapper'>
+      <div id='display' className='w-full h-12 bg-black px-2 py-3 text-center'>
+        {displayAss}
+      </div>
+
+      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
         <h2>{soundGroupName}</h2>
-        <div className={`button ${btnSoundsGroup}`} onClick={changeSoundGroup}>
-          <div></div>
+        <div
+          className={`button ${btnSoundsGroup} w-12 bg-black p-1 flex items-center`}
+          onClick={changeSoundGroup}
+        >
+          <div className='bg-blue-600 w-5 h-5'></div>
         </div>
       </div>
     </div>

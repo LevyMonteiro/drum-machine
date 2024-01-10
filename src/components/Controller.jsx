@@ -7,16 +7,12 @@ export default function Controller() {
     setDisplayAss,
     soundGroup,
     setSoundGroup,
-    btnSoundsGroup,
-    setBtnSoundsGroup,
     soundGroupName,
     setSoundGroupName,
     volume,
     setVolume,
     power,
     setPower,
-    btnPower,
-    setBtnPower,
     firstSoundsGroup,
     secondSoundsGroup,
   } = useContext(ControllerContext);
@@ -63,13 +59,6 @@ export default function Controller() {
       setSoundGroup(firstSoundsGroup);
       setSoundGroupName('Heater Kit');
       btnKitSounds.classList.add('flex-row-reverse');
-    }
-
-    // change the position of the .button
-    if (btnSoundsGroup === 'right') {
-      setBtnSoundsGroup('left');
-    } else {
-      setBtnSoundsGroup('right');
     }
   };
 

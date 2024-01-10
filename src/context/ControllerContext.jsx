@@ -101,11 +101,9 @@ export default function ControllerProvider({ children }) {
 
   const [displayAss, setDisplayAss] = useState('');
   const [soundGroup, setSoundGroup] = useState(firstSoundsGroup);
-  const [btnSoundsGroup, setBtnSoundsGroup] = useState('right');
   const [soundGroupName, setSoundGroupName] = useState('Heater Kit');
   const [volume, setVolume] = useState(1);
   const [power, setPower] = useState(true);
-  const [btnPower, setBtnPower] = useState('right');
 
   return (
     <ControllerContext.Provider
@@ -114,16 +112,12 @@ export default function ControllerProvider({ children }) {
         setDisplayAss,
         soundGroup,
         setSoundGroup,
-        btnSoundsGroup,
-        setBtnSoundsGroup,
         soundGroupName,
         setSoundGroupName,
         volume,
         setVolume,
         power,
         setPower,
-        btnPower,
-        setBtnPower,
         firstSoundsGroup,
         secondSoundsGroup,
       }}

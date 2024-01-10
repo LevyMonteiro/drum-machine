@@ -11,7 +11,7 @@ function App() {
     >
       <div
         id='app'
-        className='dark:text-white dark:bg-neutral-900 flex flex-row-reverse gap-8 p-8 rounded-xl'
+        className='dark:text-white dark:bg-neutral-900 flex flex-row-reverse gap-8 p-8 rounded-xl shadow-2xl shadow-gray-900'
       >
         <Controller />
         <Keyboard />

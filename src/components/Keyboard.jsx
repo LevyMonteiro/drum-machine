@@ -45,7 +45,7 @@ export default function Keyboard() {
           ))
         : soundGroup.map((drumPad) => (
             <div
-              className='bg-black w-7 h-7 flex justify-center'
+              className='bg-black w-24 h-24 flex justify-center items-center rounded-lg border border-stone-600 shadow-md shadow-black'
               id={drumPad['audio-id']}
               key={drumPad.src}
               onClick={() => playSound(drumPad.text)}

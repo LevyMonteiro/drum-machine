@@ -22,13 +22,16 @@ export default function Controller() {
   } = useContext(ControllerContext);
 
   const turnPower = () => {
+    const btnPower = document.querySelector('#button-power');
     setPower(!power);
     setDisplayAss('');
     // change the position of the .button
     if (power) {
-      setBtnPower('left');
+      btnPower.classList.remove('flex-row-reverse');
+      // setBtnPower('left');
     } else {
-      setBtnPower('right');
+      btnPower.classList.add('flex-row-reverse');
+      // setBtnPower('right');
     }
   };
 
@@ -50,12 +53,16 @@ export default function Controller() {
   setAudioVolume();
 
   const changeSoundGroup = () => {
+    const btnKitSounds = document.querySelector('#button-kit');
+
     if (JSON.stringify(soundGroup) === JSON.stringify(firstSoundsGroup)) {
       setSoundGroup(secondSoundsGroup);
       setSoundGroupName('Smooth Piano Kit');
+      btnKitSounds.classList.remove('flex-row-reverse');
     } else {
       setSoundGroup(firstSoundsGroup);
       setSoundGroupName('Heater Kit');
+      btnKitSounds.classList.add('flex-row-reverse');
     }
 
     // change the position of the .button
@@ -67,18 +74,48 @@ export default function Controller() {
   };
 
   return (
-    <div className='controller flex flex-col justify-center items-center w-72 gap-4'>
-      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
-        <h2>Power: {power ? 'ON' : 'OFF'}</h2>
+    <div
+      id='controller'
+      className='flex flex-col justify-center items-center w-72 gap-4'
+    >
+      <div className='flex w-full'>
         <div
-          className={`button ${btnPower} w-12 bg-black p-1 flex items-center`}
-          onClick={turnPower}
+          id='button-power-wrapper'
+          className='w-full flex flex-col justify-center items-center gap-1'
         >
-          <div className='bg-blue-600 w-5 h-5'></div>
+          <h2>Power: {power ? 'ON' : 'OFF'}</h2>
+          <div
+            id='button-power'
+            className={'w-12 bg-black p-1 flex flex-row-reverse items-center'}
+            onClick={turnPower}
+          >
+            <div className='bg-blue-600 w-5 h-5'></div>
+          </div>
+        </div>
+
+        <div
+          id='button-kit-wrapper'
+          className='w-full flex flex-col justify-center items-center gap-1'
+        >
+          <h2>{soundGroupName}</h2>
+          <div
+            id='button-kit'
+            className={'w-12 bg-black p-1 flex flex-row-reverse items-center'}
+            onClick={changeSoundGroup}
+          >
+            <div className='bg-blue-600 w-5 h-5'></div>
+          </div>
         </div>
       </div>
 
-      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
+      <div id='display' className='w-full h-12 bg-black px-2 py-3 text-center'>
+        {displayAss}
+      </div>
+
+      <div
+        id='button-volume-wrapper'
+        className='w-full flex flex-col justify-center items-center gap-1'
+      >
         <h2>Volume: {Math.round(volume * 100)}%</h2>
         <input
           className='w-full'
@@ -89,20 +126,6 @@ export default function Controller() {
           value={volume}
           onChange={handleVolumeChange}
         />
-      </div>
-
-      <div id='display' className='w-full h-12 bg-black px-2 py-3 text-center'>
-        {displayAss}
-      </div>
-
-      <div className='button-wrapper w-full flex flex-col justify-center items-center gap-1'>
-        <h2>{soundGroupName}</h2>
-        <div
-          className={`button ${btnSoundsGroup} w-12 bg-black p-1 flex items-center`}
-          onClick={changeSoundGroup}
-        >
-          <div className='bg-blue-600 w-5 h-5'></div>
-        </div>
       </div>
     </div>
   );

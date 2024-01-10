@@ -101,7 +101,7 @@ export default function ControllerProvider({ children }) {
 
   const [displayAss, setDisplayAss] = useState('');
   const [soundGroup, setSoundGroup] = useState(firstSoundsGroup);
-  const [soundGroupName, setSoundGroupName] = useState('Heater Kit');
+  const [soundGroupName, setSoundGroupName] = useState('Heater');
   const [volume, setVolume] = useState(1);
   const [power, setPower] = useState(true);
 

@@ -53,11 +53,11 @@ export default function Controller() {
 
     if (JSON.stringify(soundGroup) === JSON.stringify(firstSoundsGroup)) {
       setSoundGroup(secondSoundsGroup);
-      setSoundGroupName('Smooth Piano Kit');
+      setSoundGroupName('Smooth Piano');
       btnKitSounds.classList.remove('flex-row-reverse');
     } else {
       setSoundGroup(firstSoundsGroup);
-      setSoundGroupName('Heater Kit');
+      setSoundGroupName('Heater');
       btnKitSounds.classList.add('flex-row-reverse');
     }
   };
@@ -65,49 +65,52 @@ export default function Controller() {
   return (
     <div
       id='controller'
-      className='flex flex-col justify-center items-center w-72 gap-4'
+      className='flex flex-col justify-center items-center w-72 gap-8'
     >
       <div className='flex w-full'>
         <div
           id='button-power-wrapper'
-          className='w-full flex flex-col justify-center items-center gap-1'
+          className='w-full flex flex-col justify-center items-center gap-2'
         >
           <h2>Power: {power ? 'ON' : 'OFF'}</h2>
           <div
             id='button-power'
-            className={'w-12 bg-black p-1 flex flex-row-reverse items-center'}
+            className={'w-14 bg-black p-1 flex flex-row-reverse items-center'}
             onClick={turnPower}
           >
-            <div className='bg-blue-600 w-5 h-5'></div>
+            <div className='bg-blue-600 w-6 h-6'></div>
           </div>
         </div>
 
         <div
           id='button-kit-wrapper'
-          className='w-full flex flex-col justify-center items-center gap-1'
+          className='w-full flex flex-col justify-center items-center gap-2'
         >
           <h2>{soundGroupName}</h2>
           <div
             id='button-kit'
-            className={'w-12 bg-black p-1 flex flex-row-reverse items-center'}
+            className={'w-14 bg-black p-1 flex flex-row-reverse items-center'}
             onClick={changeSoundGroup}
           >
-            <div className='bg-blue-600 w-5 h-5'></div>
+            <div className='bg-blue-600 w-6 h-6'></div>
           </div>
         </div>
       </div>
 
-      <div id='display' className='w-full h-12 bg-black px-2 py-3 text-center'>
+      <div
+        id='display'
+        className='w-full h-12 bg-black px-2 py-3 text-center shadow shadow-black rounded'
+      >
         {displayAss}
       </div>
 
       <div
         id='button-volume-wrapper'
-        className='w-full flex flex-col justify-center items-center gap-1'
+        className='w-full flex flex-col justify-center items-center gap-2'
       >
         <h2>Volume: {Math.round(volume * 100)}%</h2>
         <input
-          className='w-full'
+          className='w-full outline-none'
           type='range'
           min={0}
           max={1}

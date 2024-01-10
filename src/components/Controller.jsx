@@ -82,6 +82,8 @@ export default function Controller() {
           </div>
         </div>
 
+        <hr className='bg-stone-600  h-16 w-1 font-black border-none m-auto' />
+
         <div
           id='button-kit-wrapper'
           className='w-full flex flex-col justify-center items-center gap-2'

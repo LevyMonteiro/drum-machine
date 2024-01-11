@@ -9,14 +9,13 @@ export default function Keyboard() {
     audio.currentTime = 0;
     audio.play();
 
-    // show the audio description on display
     setDisplayAss(power ? audio.textContent : '');
 
     // add animation when the drum-pad is pressed
     const drumPadElement = audio.parentNode;
-    drumPadElement.classList.add('pressed');
+    drumPadElement.classList.add('brightness-150');
     setTimeout(() => {
-      drumPadElement.classList.remove('pressed');
+      drumPadElement.classList.remove('brightness-150');
     }, 100);
   };
 
@@ -32,7 +31,7 @@ export default function Keyboard() {
       {power
         ? soundGroup.map((drumPad) => (
             <div
-              className='bg-black w-24 h-24 flex justify-center items-center rounded-lg border border-stone-600 shadow-md shadow-black'
+              className='bg-black w-24 h-24 flex justify-center items-center rounded-lg border border-stone-600 shadow-md shadow-black hover:brightness-125'
               id={drumPad['audio-id']}
               key={drumPad.src}
               onClick={() => playSound(drumPad.text)}
@@ -45,7 +44,7 @@ export default function Keyboard() {
           ))
         : soundGroup.map((drumPad) => (
             <div
-              className='bg-black w-24 h-24 flex justify-center items-center rounded-lg border border-stone-600 shadow-md shadow-black'
+              className='bg-black w-24 h-24 flex justify-center items-center rounded-lg border border-stone-600 shadow-md shadow-black hover:brightness-125'
               id={drumPad['audio-id']}
               key={drumPad.src}
               onClick={() => playSound(drumPad.text)}

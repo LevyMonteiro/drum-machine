@@ -7,11 +7,11 @@ function App() {
   return (
     <div
       id='wrapper'
-      className='dark:bg-neutral-700 w-screen h-screen flex flex-col justify-center items-center'
+      className='bg-indigo-100 bg-opacity-75 dark:bg-neutral-700 w-screen h-screen flex flex-col justify-center items-center'
     >
       <div
         id='app'
-        className='dark:text-white dark:bg-neutral-900 flex flex-row-reverse gap-8 p-8 rounded-xl shadow-2xl shadow-gray-900'
+        className=' dark:text-white bg-white dark:bg-neutral-900 flex flex-row-reverse gap-8 p-8 rounded-xl shadow-2xl dark:shadow-gray-900'
       >
         <Controller />
         <Keyboard />

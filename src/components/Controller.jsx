@@ -75,14 +75,14 @@ export default function Controller() {
           <h2>Power: {power ? 'ON' : 'OFF'}</h2>
           <div
             id='button-power'
-            className={'w-14 bg-black p-1 flex flex-row-reverse items-center'}
+            className='w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
             onClick={turnPower}
           >
             <div className='bg-blue-600 w-6 h-6'></div>
           </div>
         </div>
 
-        <hr className='bg-stone-600  h-16 w-1 font-black border-none m-auto' />
+        <hr className='bg-violet-300 dark:bg-stone-600  h-16 w-1 font-black border-none m-auto' />
 
         <div
           id='button-kit-wrapper'
@@ -91,7 +91,7 @@ export default function Controller() {
           <h2>{soundGroupName}</h2>
           <div
             id='button-kit'
-            className={'w-14 bg-black p-1 flex flex-row-reverse items-center'}
+            className='w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
             onClick={changeSoundGroup}
           >
             <div className='bg-blue-600 w-6 h-6'></div>
@@ -101,7 +101,7 @@ export default function Controller() {
 
       <div
         id='display'
-        className='w-full h-12 bg-black px-2 py-3 text-center shadow shadow-black rounded'
+        className='w-full h-12 dark:bg-black px-2 py-3 text-center shadow-md shadow-gray-400 dark:shadow-black rounded'
       >
         {displayAss}
       </div>

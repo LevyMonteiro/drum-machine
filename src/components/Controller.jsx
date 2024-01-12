@@ -65,36 +65,36 @@ export default function Controller() {
   return (
     <div
       id='controller'
-      className='flex flex-col justify-center items-center w-72 gap-8'
+      className='flex flex-col justify-center items-center m-auto w-64 sm:w-72 md:w-64 lg:w-72 gap-4 xs:gap-6 sm:gap-8'
     >
       <div className='flex w-full'>
         <div
           id='button-power-wrapper'
-          className='w-full flex flex-col justify-center items-center gap-2'
+          className='w-full flex flex-col justify-center items-center gap-1 xs:gap-2'
         >
           <h2>Power: {power ? 'ON' : 'OFF'}</h2>
           <div
             id='button-power'
-            className='w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
+            className='w-12 xs:w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
             onClick={turnPower}
           >
-            <div className='bg-blue-600 w-6 h-6'></div>
+            <div className='bg-blue-600 w-5 h-5 xs:w-6 xs:h-6'></div>
           </div>
         </div>
 
-        <hr className='bg-violet-300 dark:bg-stone-600  h-16 w-1 font-black border-none m-auto' />
+        <hr className='bg-violet-300 dark:bg-stone-600 h-14 lg:h-16 xs:w-1 font-black border-none flex my-auto' />
 
         <div
           id='button-kit-wrapper'
-          className='w-full flex flex-col justify-center items-center gap-2'
+          className='w-full flex flex-col justify-center items-center gap-1 xs:gap-2'
         >
           <h2>{soundGroupName}</h2>
           <div
             id='button-kit'
-            className='w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
+            className='w-12 xs:w-14 bg-indigo-200 dark:bg-black p-1 flex flex-row-reverse items-center'
             onClick={changeSoundGroup}
           >
-            <div className='bg-blue-600 w-6 h-6'></div>
+            <div className='bg-blue-600 w-5 h-5 xs:w-6 xs:h-6'></div>
           </div>
         </div>
       </div>
